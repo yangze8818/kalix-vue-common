@@ -1,0 +1,882 @@
+@import "./panel-base.styl"
+
+.im
+  position relative
+  width 100%
+  height 100%
+  background 50% 50% no-repeat
+  background-size cover
+  transition background .5s
+  perspective 800px
+  .im-wrapper
+    width 1002px
+    margin 0 auto
+    height 100%
+
+    .panel_header
+      background-color #ae935c
+    .panel_footer
+      width: 100%;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      border-radius: 0 0 $borderRadius $borderRadius
+      box-sizing border-box
+    .main_container
+      width 288px
+      height 100%
+      float left
+      .panel_body-wrapper
+        border-left 1px solid #cbbb7a
+        border-right 1px solid #cbbb7a
+        box-sizing border-box
+        background-color #ffffeb
+      .panel_footer
+        border 1px solid #cbbb7a
+        background url("/static/easemob/images/nav_tab_item_bg.png") 50% 0 repeat-x
+    .chat_wrapper
+      position relative
+      width 700px
+      height 100%
+      float left
+      margin-left 14px
+    .main-panel,
+    .chat-panel
+      height: 80%;
+      top: 5%;
+      border-radius: $borderRadius
+    .main-panel
+      position: relative;
+    .chat-panel
+      position: absolute;
+    .main-panel
+      display: block;
+      width: 280px;
+      transition: none !important;
+      transform: none !important;
+      .side_bar
+        width 260px
+        height 100%
+        background url("/static/easemob/images/side_bar-bg.png") 0 0 repeat
+        border-radius $borderRadius 0 0 $borderRadius
+        transition transform .5s
+        transform translate3d(0, 0, 0)
+        &.show
+          transform translate3d(-256px, 0, 0)
+        .side_bar_close
+          position absolute
+          top 0px
+          left 0px
+          border-radius-bottomright 0
+        .user_info
+          text-align center
+          padding 21px 0 13px
+          .avatar_wrapper
+            display inline-block
+            border 1px solid #fefeea
+            border-radius 50%
+            padding 13px
+            .avatar
+              width 81px
+              height 81px
+              border-radius 50%
+          .user_name,
+          .user_org
+            font-size 14px
+            line-height 14px
+          .user_name
+            margin-top 11px
+            font-weight bold
+            color #ffffff
+          .user_org
+            margin-top 5px
+            color #c5ac71
+        .side_list
+          border solid #625833
+          border-width 1px 0
+          .side_list_item
+            height 53px
+            line-height 53px
+            border-top 1px solid #625833
+            padding 0 21px
+            font-size 14px
+            color #cec9c8
+            cursor pointer
+            &:first-chile
+              border none
+            .icon
+              display inline-block
+              width 28px
+              height 28px
+              border-radius 50%
+              margin 13px 15px 0 0
+              background #48372f 50% 50% no-repeat
+              float left
+            &.selected
+              color #ffe1dd
+              background-color rgba(197, 172, 113, 0.29)
+              .icon
+                background-color #937d67
+
+      .wallpaper-ctrl
+        position: absolute;
+        top: -30px;
+        .wallpaperImg
+          width: 19px;
+          height: 19px;
+          margin: 0 3px;
+          overflow: hidden;
+          background: url(http://w.qq.com/css/image/arrow.png) no-repeat;
+          display: inline-block;
+          text-decoration: none;
+          cursor pointer
+          &.pre
+            background-position: -2px -2px;
+          &.next
+            background-position: -25px -2px;
+
+    .chat-panel
+      width: 100%;
+      overflow: hidden;
+      display block
+  .panel_body_container
+    position: absolute;
+    left: 0;
+    width: 100%;
+    bottom: 0;
+    top: 0;
+
+  .panel_top-distance
+    top 55px
+
+  .panel_bottom-distance
+    bottom 70px
+
+  .panel
+    position absolute
+    display none
+    width 100%
+    height 100%
+    top 0
+    left 0
+    &.selected
+      display block
+    .panel_header
+      display: flex;
+      box-orient: horizontal;
+      height: 55px;
+      width: 100%;
+      border-radius: $borderRadius $borderRadius 0 0;
+      justify-content: flex-start;
+      align-items: center;
+      .item
+        flex 1
+        font-size 0
+        padding: 6px 10px !important;
+        &:last-child
+          text-align right
+      .avatar_wrapper
+        display flex
+        justify-content flex-start
+        align-items center
+        font-size 0
+        cursor pointer
+        .avatar
+          display block
+          width 30px
+          height 30px
+          border-radius 50%
+          overflow hidden
+          margin-right 9px
+        .text
+          display block
+          font-size 14px
+          color #ffffff
+    .panel_title
+      padding: 0
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 100%;
+      text-align: center;
+      box-flex: 15;
+      color #ffffff
+      text_ellipsis()
+
+    .text_ellipsis
+      text_ellipsis()
+    .panel_body_container_2
+      top 45px;
+    .panel_body
+      width: 100%;
+      min-height: 100%;
+      position: relative;
+    .padding_20
+      padding-right 30px
+      padding-left 20px
+
+  /* main panel 底部按钮 */
+  .nav_tab
+    ul
+      display flex
+      box-orient horizontal
+      li
+        position: relative;
+        overflow: hidden;
+        flex: 1;
+        display flex
+        height: 68px;
+        color: #ccc;
+        font-size: 0px;
+        text-align: center;
+        cursor: pointer;
+        justify-content: center;
+        align-items: center;
+        &:before
+          top 0
+          left 0
+          position absolute
+          display block
+          content ''
+          width 1px
+          height 100%
+          background-image url("/static/easemob/images/nav_tab_item_border.png")
+        &:first-child
+          border-radius: 0 0 0 $borderRadius
+          &:before
+            visibility hidden
+        &:last-child
+          border-radius: 0 0 $borderRadius 0
+        .icon
+          display: inline-block;
+          width: 34px;
+          height: 34px;
+          background-size: 100% 100%
+        span
+          display: block;
+          position: relative;
+          bottom: 2px;
+          width: 100%;
+          font-size: 12px;
+
+        &.contact .icon {
+          background-image: url(http://w.qq.com/css/image/tab_icon_conversation.png)
+        }
+
+        &.conversation .icon {
+          background-image: url(http://w.qq.com/css/image/tab_icon_contact.png)
+        }
+
+        &.plugin .icon {
+          background-image: url(http://w.qq.com/css/image/tab_icon_plugin.png)
+        }
+
+        &.setup .icon {
+          background-image: url(http://w.qq.com/css/image/tab_icon_setup.png)
+        }
+
+        &.selected.contact .icon {
+          background-image: url(http://w.qq.com/css/image/tab_icon_conversation_selected.png)
+        }
+
+        &.selected.conversation .icon {
+          background-image: url(http://w.qq.com/css/image/tab_icon_contact_selected.png)
+        }
+
+        &.selected.plugin .icon {
+          background-image: url(http://w.qq.com/css/image/tab_icon_plugin_selected.png)
+        }
+
+        &.selected.setup .icon {
+          background-image: url(http://w.qq.com/css/image/tab_icon_setup_selected.png)
+        }
+
+  .member_tab
+    tap-highlight-color: rgba(255, 255, 255, 0)
+    .tab_head
+      border: 0;
+      background: #fff
+      li
+        display: inline-block;
+        float: left;
+        box-sizing: border-box;
+        text-align: center;
+        border: 0;
+        border-bottom: 2px solid #ccc;
+        width: 33.33%;
+        padding: .65em 12px;
+        background: 0;
+        box-shadow: 10px 0 0 -9px #ccc;
+        cursor: pointer
+        &:last-child
+          box-shadow none
+        &.active
+          border-bottom-color: #0aa7ff;
+          color: #0aa7ff
+
+  .member_tab_body
+    position: absolute;
+    bottom: 0;
+    top 0
+    width: 100%;
+    & > li
+      display none
+      height: 100%;
+      &.active
+        display block
+    .list_group
+      cursor: pointer
+      &:first-child
+        .list_group_title
+          border-top: 0
+      .list_group_body
+        display none
+      .list_arrow_right
+        background: url(http://w.qq.com/css/image/open_arrow.png) no-repeat 12px;
+        background-size: 14px 14px;
+      &.active
+        .list_group_body
+          display block
+        .list_arrow_right
+          background-image: url(http://w.qq.com/css/image/open_arrow_fire.png);
+    .list_group_title
+      padding: .65em 28px .75em
+    .list_group_white_title
+      border-top 1px solid #cccccc
+    .onlinePercent
+      color: gray;
+      font-size: 12px;
+      float: right;
+      line-height: 20px;
+  .list_item
+    position: relative;
+    border-top: 1px solid #f0ebca;
+    padding: .15em 1px;
+    line-height: 100%;
+    cursor: pointer;
+    background-color: whitesmoke;
+    &:first-child
+      border-top none
+    &:after
+      visibility: hidden;
+      display: block;
+      content: " ";
+      clear: both;
+    .avatar
+      float: left;
+      position: relative;
+      width: 40px;
+      height: 40px;
+      margin: 8px !important;
+    .member_nick
+      padding: 6px 5px 0 5px;
+      line-height: 23px;
+      height: 22px;
+      overflow: hidden;
+      span
+        color: #aaa;
+        line-height: 17px;
+        font-size: 12px;
+
+    .member_msg
+      overflow: hidden;
+      font-size: 12px;
+      color: #aaa;
+      line-height: 28px;
+      padding-left: 5px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      .member_signature
+        padding-right: 6px !important;
+
+  .member_scroll_area
+    overflow: hidden;
+    bottom: 0;
+    top: 0;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    background: gray;
+
+  .plugin_list
+    li
+      cursor: pointer;
+      position: relative;
+      width: 93.33px;
+      height: 93.33px
+      float: left;
+      background-color: #dadbe0;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      border: 1px solid #eceef2;
+      border-bottom-color: #c1c7d2;
+      border-right-color: #c1c7d2
+      a
+        position: absolute;
+        left: 0;
+        display: block;
+        width: 100%;
+        height: 19px;
+        line-height: 19px;
+        font-size: 13px;
+        text-align: center
+        bottom: 6px
+      .icon
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: no-repeat center 18%;
+        background-size: 60%;
+      &.qzone > .icon
+        background-image: url(http://w.qq.com/css/image/plugin_icon_qzone.jpg)
+
+      &.qmail > .icon
+        background-image: url(http://w.qq.com/css/image/plugin_icon_qmail.jpg)
+
+      &.qq_portal > .icon
+        background-image: url(http://w.qq.com/css/image/plugin_icon_qq_portal.png)
+
+      &.soso_map > .icon
+        background-image: url(http://w.qq.com/css/image/plugin_icon_soso_map.jpg)
+
+  .list_page
+    .group
+      padding: 10px;
+      & > .row
+        border-left: 1px solid #AFC8E2;
+        border-right: 1px solid #AFC8E2;
+        border-bottom: 1px solid #AFC8E2;
+        padding: 10px;
+        background: #fff
+        &:first-child
+          border-top: 1px solid #AFC8E2;
+          border-top-left-radius: 5px;
+          border-top-right-radius: 5px
+        &:last-child
+          border-bottom-left-radius: 5px;
+          border-bottom-right-radius: 5px
+        .cloumn
+          float: left
+          .avatar
+            position: relative;
+            margin: 8px !important;
+            width 40px
+            height: 40px;
+        .profile_title_setting
+          padding-top: 5px;
+          padding-left: 5px;
+          width: 62%;
+          float: left;
+          .profile_name
+            font-size: 1.4em;
+            line-height: 1.4em;
+          .text_ellipsis
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          .profile_account
+            color: #666;
+            font-size: .9em;
+    .label
+      color: #666;
+      float: left;
+      width: 80px;
+    .more_icon
+      float: right;
+      width: 16px;
+      height: 16px;
+      background: url(http://w.qq.com/css/image/open_arrow.png) no-repeat center;
+      background-size: 100% 100%;
+      margin-left: 10px
+    .active
+      .more_icon
+        background: url(http://w.qq.com/css/image/open_arrow_fire.png) no-repeat center !important;
+        background-size: 100% 100% !important
+
+    .profile_signature
+      line-height: 22px;
+      overflow: hidden;
+
+  .list-content
+    max-height: 100%
+    overflow: hidden
+
+  .loginout
+    background: #f74634 !important;
+    background: -moz-linear-gradient(top, #f74634, #ce2715) !important;
+    background: -webkit-gradient(linear, left top, left bottom, from(#f74634), to(#ce2715)) !important;
+    background: -webkit-linear-gradient(#f74634, #ce2715) !important;
+    background: -ms-linear-gradient(#f74634, #ce2715) !important;
+    background: -o-linear-gradient(#f74634, #ce2715) !important;
+    background: linear-gradient(#f74634, #ce2715) !important;
+    text-shadow: 0 0 10px #969696;
+    color: #fff;
+    text-align: center
+
+  .clearfix:after
+    content: " ";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+    font-size: 0;
+
+  .search_wrapper
+    position: relative;
+    border-top: 1px solid #cbbb7a;
+    border-bottom: 1px solid #cbbb7a;
+    padding: 10px 6px;
+    background url("/static/easemob/images/user-item-bg.png") 50% 50% repeat-x
+    .search_inner
+      position: relative;
+      border: 1px solid #d0d0d0;
+      -webkit-border-radius: 18px;
+      -moz-border-radius: 18px;
+      border-radius: 18px;
+      padding: 5px 32px 5px 20px;
+      background: #fff;
+      margin-right: 60px
+      -webkit-box-shadow: 0 1px #ececec, inset 0 1px #a7a8a8, inset 1px 0 #a7a8a8, inset -1px 0 #a7a8a8;
+      -moz-box-shadow: 0 1px #ececec, inset 0 1px #a7a8a8, inset 1px 0 #a7a8a8, inset -1px 0 #a7a8a8;
+      box-shadow: 0 1px #ececec, inset 0 1px #a7a8a8, inset 1px 0 #a7a8a8, inset -1px 0 #a7a8a8
+
+    .searchCancel
+      position: absolute;
+      height: 33px;
+      width: 50px;
+      top: 10px;
+      right: 10px;
+      display: block
+
+    .searchClear
+      display: block;
+      position: absolute;
+      top: 7px;
+      right: 8px;
+      border: 0;
+      width: 20px;
+      height: 20px;
+      background: #bfbfbf url(http://w.qq.com/css/image/clear.png) center;
+      -webkit-border-radius: 10px;
+      -moz-border-radius: 10px;
+      border-radius: 10px
+
+    .searchInput
+      border: 0;
+      outline: 0;
+      width: 100%;
+      font-family: '微软雅黑', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 20px;
+      background: #fff
+
+  .scrollWrapper
+    position: absolute;
+    overflow: hidden;
+    bottom: 0;
+    top: 55px
+    left: 0;
+    width: 100%
+  .search_container_scroll_area
+    background: #ffffeb;
+
+  /* 用户列表 */
+  .user-list
+    .user-list_item
+      height 70px
+      width 100%
+      padding 0 20px
+      background url("/static/easemob/images/images/user-item-bg.png") 50% 0 repeat-x
+      border-bottom 1px solid #f0ebca
+      box-sizing border-box
+      cursor pointer
+      &.selected
+        background-image url("/static/easemob/images/user-item-bg.png")
+      .avatar_wrapper
+        display inline-block
+        margin-right 8px
+        margin-top 15px
+        position relative
+        float left
+        .avatar
+          width 40px
+          height 40px
+          border-radius 50%
+          border 1px solid #dddddd
+        .badge
+          position absolute
+          display inline-block
+          top -6px
+          right -2px
+          width 14px
+          height 14px
+          font-size 12px
+          color #ffffff
+          text-align center
+          line-height 14px
+          border-radius 50%
+          border 1px solid #fff
+          background-color #ff3b2f
+          .badge-text
+            transform scale(0.8333)
+      .user-list_item_main
+        display inline-block
+        float left
+        margin 0
+        margin-top 15px
+        width 134px
+        .member_nick
+          height: 16px;
+          line-height: 16px;
+          overflow: hidden;
+          margin-top 6px;
+        .member_msg
+          font-size: 12px;
+          line-height 14px
+          color: #898a93;
+          margin-top 2px
+          text_ellipsis()
+
+      .time
+        display inline-block
+        float right
+        margin-top 21px
+        margin-left 8px
+        font-size 14px;
+        color #bcbdc0
+  .list_white
+    li
+      background url("/static/easemob/images/user-item-bg.png")
+
+  .chat_container
+    background: rgba(255, 255, 235, 0.81) !important;
+    width: 100%;
+    min-height: 100%
+
+  .chat_toolbar_footer
+    height 176px
+    z-index auto
+    background-color #ffffeb
+    .chat_toolbar
+      width: 100%;
+      color: #b4b5b7;
+      display: flex;
+      justify-content start
+      align-items center
+      box-sizing: border-box;
+      font-size 0
+      height 37px
+      padding 0 8px
+      border-bottom 1px solid #f0ebca
+      .chat_toolbar_item
+        display inline-block
+        width 28px
+        height 28px
+        margin 0 5px
+        background 50% 50% no-repeat
+        cursor pointer
+        &.face
+          background-image url("/static/easemob/images/icon-face.png")
+        &.file
+          background-image url("/static/easemob/images/icon-file.png")
+        &.video
+          background-image url("/static/easemob/images/icon-video.png")
+
+    .chat_textarea
+      display: block;
+      resize: none;
+      width: 100%;
+      border none
+      background-color transparent
+      color: #333;
+      box-sizing border-box
+      padding: 5px 16px;
+      line-height: 22px;
+      height: 98px;
+      font-family: '微软雅黑', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      -webkit-user-modify: read-write-plaintext-only;
+
+    .chat_button_list
+      display flex
+      justify-content flex-end
+      align-items center
+      padding 0 35px
+      .btn-item
+        display inline-block
+        width 66px
+        height 26px
+        line-height 26px
+        text-align center
+        font-size 14px
+        color: #565452
+        border 1px solid #dcdcdc
+        background-color #ffffff
+    .btn
+      position: relative;
+      font-size: 14px;
+      width: auto;
+      height: 100%;
+      box-sizing: border-box;
+      border-radius: 5px;
+      display inline-block
+      line-height: 33px;
+      padding: 0 10px;
+      cursor: pointer;
+      &.btn_black
+        border: 1px solid;
+        border-color: #2c2727 #2c2727 #1a1919;
+        background: #333;
+      &.btn_blue
+        padding: 6px 10px !important;
+        display: block !important;
+        cursor: pointer !important;
+        font-size: 14px;
+        vertical-align: middle;
+        position: relative;
+        border: 1px solid #044062;
+        box-sizing: border-box;
+        color: #fff;
+        border-radius: 5px;
+        min-width: 56px;
+        height: 42px;
+        background: #396b9e;
+        -webkit-text-shadow: 0 1px 1px #194b7e;
+        -moz-text-shadow: 0 1px 1px #194b7e;
+        text-shadow: 0 1px 1px #194b7e
+        &.active
+          background: #5393c5;
+      .btn_img
+        background-size: 100% 100% !important;
+      &.btn_search
+        .btn_img
+          width: 14px;
+          height: 14px;
+          display: inline-block;
+          margin: 0 4px
+          background: url(http://w.qq.com/css/image/title_search_icon.png);
+      &.btn_face
+        border: 0;
+        background: 0;
+        width: 38px;
+        padding: 5px;
+        .btn_img
+          width: 30px;
+          height: 30px;
+          display: block
+          margin: 0 4px;
+          background: url(http://w.qq.com/css/image/chat_bottombar_icon_face.png)
+
+    .send_chat_btn
+      width: 56px;
+
+  .tool-btn
+    display inline-block
+    width 26px
+    height 26px
+    background 50% 50% no-repeat
+    cursor pointer
+    border-radius $borderRadius
+    transition background-color 0.2s, border-color 0.2s
+    border 1px solid transparent
+    &:hover
+      background-color #7b6a48
+    & + .tool-btn
+      margin-left 10px
+    &.fixed
+      background-image url("/static/easemob/images/icon-fixed.png")
+    &.min
+      background-image url("/static/easemob/images/icon-min.png")
+    &.max
+      background-image url("/static/easemob/images/icon-max.png")
+    &.close
+      background-image url("/static/easemob/images/icon-close.png")
+
+  /* “测试”按钮 */
+  .btn-test
+    position absolute
+    background-color #000000
+    color #ffffff
+    cursor: pointer;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    padding: 8px 10px;
+    border-radius: 5px;
+    border: 1px solid #0a0a0a;
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.51);
+
+  /* 底部 菜单栏*/
+  .footer-menu
+    position: absolute
+    bottom 0
+    left 50%
+    height 65px
+    transform translate3d(-50%, 0, 0)
+    .footer-bg
+      position absolute
+      bottom 0
+      left 0
+      width 100%
+      height 65px
+      color: #fff;
+      background: url("/static/easemob/images/dock_bg.png") 50% 0 repeat-x;
+      border-radius 4px 4px 0 0
+    .footer-wrapper
+      position relative
+      align-items flex-end
+      justify-content center
+      display flex
+      height 50px
+      padding 8px 40px 0
+      font-size 0
+    .mac-avatar
+      margin 0 11px
+      text-align: center;
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      line-height 50px
+      font-size: 26px;
+      transition: all .3s;
+      box-sizing: border-box;
+      cursor: pointer;
+      color #ffffff
+      border-radius 12px
+      text-shadow 8px 9px 13px rgba(0, 0, 0, 0.57)
+      &.current
+        macAvatarStyle(100%)
+
+      &.prev,
+      &.next
+        macAvatarStyle(70%)
+
+      &.prev_prev,
+      &.next_next
+        macAvatarStyle(30%)
+
+      &.icon-admin
+        background-color #fe82b4
+      &.icon-common-home
+        background-color #94dffe
+      &.icon-oa
+        background-color #f7bb25
+      &.icon-art
+        background-color #25f7b1
+      &.icon-schedule
+        background-color #ccadfb
+      &.icon-research
+        background-color #fc7146
+
+  .show_side_bar-enter-active,
+  .show_side_bare-leave-active
+    transition: all 0.5s
+
+  .show_side_bar-enter,
+  .show_side_bar-leave-active
+    transform translate3d(0, 0, 0)
+

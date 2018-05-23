@@ -1,0 +1,123 @@
+# 科研管理項目配置文件
+
+CommonDictURL = "/camel/rest/common/dicts"
+CommonDictsTypesListURL = "/camel/rest/common/dicts/types/list"
+NewsURL = "/camel/rest/newss"
+NoteURL = "/camel/rest/notes"
+SenderURL = "/camel/rest/messages/sender"
+ReceiverURL = "/camel/rest/messages/receiver"
+AddressURL = "/camel/rest/addresss"
+AddressGroupURL = "/camel/rest/addressgroups"
+
+# 需要自动注册成全局的News组件
+[[CommonDictComponent]]
+  path = "./commondictView.vue"
+  name = "CommonDictView"
+[[CommonDictComponent]]
+  path = "./commondictAdd"
+  name = "CommonDictAdd"
+#[[CommonDictComponent]]
+#  path = "./commondictSearch"
+#  name = "CommonDictSearch"
+
+# 需要自动注册成全局的News组件
+[[NewsComponent]]
+  path = "common/news/newsView"
+  name = "CommonNewsView"
+[[NewsComponent]]
+  path = "common/news/newsAdd"
+  name = "CommonNewsAdd"
+[[NewsComponent]]
+  path = "common/news/newsSearch"
+  name = "CommonNewsSearch"
+
+# 需要自动注册成全局的Note组件
+[[NoteComponent]]
+  path = "common/note/noteView"
+  name = "CommonNoteView"
+[[NoteComponent]]
+  path = "common/note/noteAdd"
+  name = "CommonNoteAdd"
+[[NoteComponent]]
+  path = "common/note/noteSearch"
+  name = "CommonNoteSearch"
+[[NoteComponent]]
+  path = "common/note/notePreview"
+  name = "CommonNotePreview"
+
+# 需要自动注册成全局的 Sender 组件
+[[SenderComponent]]
+  path = "common/sender/senderView"
+  name = "CommonSenderView"
+[[SenderComponent]]
+  path = "common/sender/senderSearch"
+  name = "CommonSenderSearch"
+
+# table 的默认按钮定义
+[[SenderToolButtonList]]
+  id = "view"
+  title = "查看"
+  isShow = true    # 是否显示
+  isPermission = true   # 是否进行权限认证
+[[SenderToolButtonList]]
+  id = "delete"
+  title = "删除"
+  isShow = true
+  isPermission = true
+
+
+# 需要自动注册成全局的 Receiver 组件
+[[ReceiverComponent]]
+  path = "common/receiver/receiverView"
+  name = "CommonReceiverView"
+[[ReceiverComponent]]
+  path = "common/receiver/receiverAdd"
+  name = "CommonReceiverAdd"
+[[ReceiverComponent]]
+  path = "common/receiver/receiverSearch"
+  name = "CommonReceiverSearch"
+
+# table 的默认按钮定义
+[[ToolButtonList]]
+  id = "view"
+  title = "查看"
+  isShow = true    # 是否显示
+  isPermission = true   # 是否进行权限认证
+[[ToolButtonList]]
+  id = "edit"
+  title = "编辑"
+  isShow = true
+  isPermission = true
+[[ToolButtonList]]
+  id = "delete"
+  title = "删除"
+  isShow = true
+  isPermission = true
+[[ToolButtonList]]
+  id = "preview"
+  title = "预览"
+  isShow = true
+
+# 需要自动注册成全局的 分类列表 组件
+[[GroupPanelComponent]]
+  path = "common/easemob/groupPanel"
+  name = "CommonGroupPanel"
+# 通讯录组件
+[[AddressComponent]]
+  path = "common/address/addressSearch"
+  name = "CommonAddressSearch"
+[[AddressComponent]]
+  path = "common/address/groupAdd"
+  name = "CommonGroupAdd"
+[[AddressComponent]]
+  path = "common/address/groupEdit"
+  name = "CommonGroupEdit"
+[[AddressComponent]]
+  path = "common/address/addressEdit"
+  name = "CommonAddressEdit"
+[[AddressComponent]]
+  path = "common/address/addressAdd"
+  name = "CommonAddressAdd"
+[[AddressComponent]]
+  path = "common/address/addressView"
+  name = "CommonAddressView"

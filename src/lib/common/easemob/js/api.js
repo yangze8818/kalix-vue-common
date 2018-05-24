@@ -254,7 +254,7 @@ var recallMessage = null;
 api.setRecallMessage = function (message,obj){
   // recallMessage = message;
   // recallMessage='<div class="receiver"><div class="receiver-avatar"><img src="http://www.qinghuwai.com/uploadfile/member/6/avatar/6.jpg"></div><div class="receiver-cont"><div class="left_triangle"></div><span>'+message.content+'</span></div></div>'
-  obj.append('<div style="float:right" class="receiver"><div class="receiver-avatar"><img src="/static/images/im/6.jpg" width="30" height="30"></div><div class="receiver-cont"><div class="left_triangle"></div><span>'+message.content.content+'</span></div></div>')
+  obj.append('<div style="float:right" class="receiver"><div class="receiver-avatar"><img src="/static/easemob/images/im/6.jpg" width="30" height="30"></div><div class="receiver-cont"><div class="left_triangle"></div><span>'+message.content.content+'</span></div></div>')
 }
 
 api.sendTextMessage = function (session_show,centent){
@@ -639,7 +639,7 @@ api.getConversationList = function (){
       var id="lt_win"+i;
      $('#user-list-session').append('<li id="'+id+'" onclick=onSelectUserChat("'+id+'","isChatShow_win") ' +
                                     'class="user-list_item"><div class="avatar_wrapper">' +
-                                    '<img class="avatar" src="../static/images/im/4.jpg"/></div>' +
+                                    '<img class="avatar" src="../static/easemob/images/im/4.jpg"/></div>' +
                                     '<div class="user-list_item_main">' +
                                     '<p class="member_nick">'+list[i].latestMessage.content.user.name+'</p>' +
                                     '<p class="member_msg text_ellipsis">'+list[i].latestMessage.content.content+'</p></div>' +
@@ -747,7 +747,7 @@ api.clearUnreadCount = function (){
 
 api.receiveMessage = function (message){
  var message_zh= RongIMLib.RongIMEmoji.symbolToHTML(message.content.content);
-  vueObj.append('<div class="receiver"><div class="receiver-avatar"><img src="/static/images/im/6.jpg" width="30" height="30"></div><div class="receiver-cont"><div class="left_triangle"></div><span>'+message_zh+'</span></div></div>');
+  vueObj.append('<div class="receiver"><div class="receiver-avatar"><img src="/static/easemob/images/im/6.jpg" width="30" height="30"></div><div class="receiver-cont"><div class="left_triangle"></div><span>'+message_zh+'</span></div></div>');
 }
 
 

@@ -2,7 +2,7 @@
   div.panel.chat-panel
     panel-header
       template(slot="title")
-        chat-avatar(avatar="/static/images/im/7.jpg" text="某")
+        chat-avatar(avatar="/static/easemob/images/im/7.jpg" text="某")
       template(slot="right")
         div.tool-btn.fixed
         div.tool-btn.max

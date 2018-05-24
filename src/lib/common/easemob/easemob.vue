@@ -15,23 +15,23 @@
             </div>
             <ul class="side_list">
               <li class="side_list_item selected">
-                <i class="icon" style="background-image: url(/static/images/im/icon-1.png)"></i>
+                <i class="icon" style="background-image: url(/static/easemob/images/im/icon-1.png)"></i>
                 首页
               </li>
               <li class="side_list_item">
-                <i class="icon" style="background-image: url(/static/images/im/icon-2.png)"></i>
+                <i class="icon" style="background-image: url(/static/easemob/images/im/icon-2.png)"></i>
                 历史纪录
               </li>
               <li class="side_list_item">
-                <i class="icon" style="background-image: url(/static/images/im/icon-3.png)"></i>
+                <i class="icon" style="background-image: url(/static/easemob/images/im/icon-3.png)"></i>
                 个人设置
               </li>
               <li class="side_list_item">
-                <i class="icon" style="background-image: url('/static/images/im/icon-4.png')"></i>
+                <i class="icon" style="background-image: url('/static/easemob/images/im/icon-4.png')"></i>
                 收藏
               </li>
               <li class="side_list_item">
-                <i class="icon" style="background-image: url(/static/images/im/icon-5.png)"></i>编辑
+                <i class="icon" style="background-image: url(/static/easemob/images/im/icon-5.png)"></i>编辑
               </li>
             </ul>
           </div>
@@ -406,7 +406,7 @@
         this.isChatShow = true
       },
       setBackground() {
-        return {'background-image': `url("/static/images/im/${this.currentBackgroundImg}.jpg")`}
+        return {'background-image': `url("/static/easemob/images/im/${this.currentBackgroundImg}.jpg")`}
       },
       onChangeBackgroundImg(flag) {
         if (flag) {
